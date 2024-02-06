@@ -1,38 +1,287 @@
-.App {
-  text-align: center;
+/* Start Header */
+header {
+    min-height: 68px;
+    position: sticky;
+    top: 0;
+    left: 0;
+    background-color: #fff;
+    width: 100%;
+    z-index: 100;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+header h1 {
+    font-size: 1.5rem;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+header nav {
+    transition: .3s height;
+    flex: 1;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+header nav ul {
+    list-style-type: none;
+    flex: 1;
+    padding-left: 0px;
+    margin-bottom: 0px;
+    justify-content: center;
 }
-
-.App-link {
-  color: #61dafb;
+header nav ul a {
+    text-decoration: none;
+    color: #0a2b1e;
+    font-size: 1.1rem;
+    transition: color .3s;
+    &:hover {
+        color: #17bf9e;
+    }
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+header i {
+    font-size: 1.3rem;
+    color: #17bf9e;
+}
+header .phone p {
+    color: #0a2b1e;
+}
+header .toggle {
+    display: none;
+    cursor: pointer;
+}
+@media (max-width: 767px) {
+    header .container {
+        flex-wrap: wrap;
+    }
+    header nav {
+        top: 68px;
+        left: 0;
+        position: absolute;
+        flex-direction: column;
+        width: 100%;
+        height: 250px;
+        flex: auto;
+        height: 0;
+        overflow: hidden;
+        background-color: #fff;
+        z-index: 9999;
+    }
+    header nav ul {
+        width: 100%;
+        max-width: 540px;
+        flex-direction: column;
+        row-gap: 1rem;
+        padding: 1rem;
+    }
+    header nav ul a {
+        display: block;
+        width: 100%;
+    }
+    header .phone {
+        width: 100%;
+        max-width: 540px;
+        padding: 1rem;
+        padding-top: 0px;
+    }
+    header .toggle {
+        display: block;
+    }
+}
+.height-100 {
+    height: 270px !important;
+}
+/* Start Hero Section */
+.hero-section article {
+    padding-top: 70px;
+}
+.hero-section .search {
+    margin-top: 100px;
+    display: flex;
+    position: relative;
+}
+.hero-section input,
+.hero-section button {
+    outline: none;
+    border: 2px solid #17bf9e;
+    border-radius: 2rem;
+}
+.hero-section button {
+    transition: background-color .3s, color .3s;
+    &:hover {
+        background-color: #17bf9e;
+        color: #fff;
+    }
+}
+.hero-section input {
+    padding: 1rem;
+    padding-left: 2rem;
+    width: 100%;
+    color: #6c757d;
+    caret-color: #17bf9e;
+}
+.hero-section button {
+    position: absolute;
+    right: 0px;
+    padding: 1rem 2rem;
+    background-color: transparent;
+}
+/* Start Company */
+.company .companies {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+}
+.company .companies .comp {
+    padding: 0 15px;
+    text-align: center;
+}
+.company h2 {
+    font-size: 25px;
+}
+.company i {
+    color: #17bf9e;
+    font-size: 20px;
+}
+.company i,
+.company svg {
+    margin-right: 5px;
+}
+.company svg {
+    fill: #17bf9e;
+    width: 20px;
+}
+@media (max-width: 767px) {
+    .company .row {
+        gap: 1rem;
+    }
+}
+/* Start About */
+@media (min-width: 992px) {
+    .about .container .row .col-md-6:last-of-type {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+}
+/* Start Courses */
+.courses img {
+    border-radius: 1rem;
+}
+.courses p {
+    margin-bottom: 0;
+}
+.courses i {
+    color: #17bf9e;
+    margin-right: .5rem;
+}
+.courses a {
+    text-decoration: none;
+    color: #17bf9e;
+}
+/* Start Choose */
+.choose .row #playButton {
+    color: #17bf9e;
+    border: 2px solid #17bf9e;
+    background-color: #fff;
+    width: 50px;
+    height: 50px;
+    font-size: 25px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.choose .row video {
+    height: 425px;
+}
+/* Start Features */
+.features .container {
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+}
+.features .container article {
+    padding: 0 15px;
+}
+.features .container i {
+    color: #17bf9e;
+}
+.features .container h6 {
+    font-weight: 600;
+}
+/* Start Free Courses */
+.free-courses .courses-details {
+    grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+}
+.free-courses .courses-details article {
+    padding: 0 15px;
+}
+.free-courses .courses-details button {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 50;
+    background-color: #17bf9e;
+    color: #fff;
+    border: none;
+    padding: .5rem 2rem;
+    transition: background-color .3s;
+    &:hover {
+        background-color: #0a2b1e;
+    }
+}
+.free-courses .courses-details article h3 {
+    font-size: 16px;
+    margin: 10px 0;
+}
+.free-courses .courses-details article i {
+    color: #17bf9e;
+}
+/* Start Testimonials */
+.testimonials .row .col-md-6:last-of-type {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.testimonials .row .col-md-6:last-of-type h2 {
+    margin-bottom: 2rem;
+}
+.testimonials .row .col-md-6:last-of-type p {
+    line-height: 2;
+    color: #6c757d;
+}
+/* Start News Letters */
+.news-letters .news {
+    background-color: #17bf9e;
+    padding: 50px 0;
+}
+.news-letters .news form {
+    max-width: 500px;
+}
+.news-letters .news form input {
+    width: 100%;
+    outline: none;
+    border: none;
+    padding: .75rem 2rem;
+}
+.news-letters .news form button {
+    top: 50%;
+    transform: translateY(-50%);
+    right: 5px;
+    padding: calc(.75rem - 5px) 2rem;
+    background-color: #17bf9e;
+    color: #fff;
+    border: none;
+}
+@media (max-width: 575px) {
+    .news-letters .news form {
+        width: 300px;
+    }
+}
+/* Start Footer */
+footer {
+    background-color: #e2f8f8a9;
+}
+footer h3 {
+    font-size: 1.5rem;
+}
+footer i {
+    color: #17bf9e;
+}
+footer .socials i {
+    color: #17bf9e;
+    font-size: 20px;
+}
+footer .list-group-item {
+    background-color: transparent;
+    border: none;
+    padding-left: 0;
 }
